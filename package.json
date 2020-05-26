@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint .",
     "appium": "appium",
-    "test:e2e": "jest --testMatch=\"**/test/specs/**/*.js\"",
+    "test:e2e": "jest --testMatch=\"**/tests/specs/**/*test.js\"",
     "test:e2e:android": "E2E_DEVICE=\"android-emulator\" yarn run test:e2e",
     "test:e2e:ios": "E2E_DEVICE=\"ios-emulator\"  yarn run test:e2e"
   },
