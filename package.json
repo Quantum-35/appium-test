@@ -1,0 +1,61 @@
+{
+  "name": "testappium",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "appium": "appium",
+    "test:e2e": "jest --testMatch=\"**/test/specs/**/*.js\"",
+    "test:e2e:android": "E2E_DEVICE=\"android-emulator\" yarn run test:e2e",
+    "test:e2e:ios": "E2E_DEVICE=\"ios-emulator\"  yarn run test:e2e"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "formik": "^2.1.4",
+    "react": "16.11.0",
+    "react-native": "0.62.2",
+    "wd": "^1.12.1",
+    "yup": "^0.29.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/runtime": "^7.9.6",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "@wdio/appium-service": "^6.1.0",
+    "@wdio/cli": "^6.1.12",
+    "@wdio/local-runner": "^6.1.12",
+    "@wdio/mocha-framework": "^6.1.8",
+    "@wdio/spec-reporter": "^6.1.12",
+    "@wdio/sync": "^6.1.8",
+    "appium": "^1.17.1",
+    "babel-jest": "^26.0.1",
+    "chromedriver": "^83.0.0",
+    "eslint": "^7.1.0",
+    "jest": "^26.0.1",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-test-renderer": "16.11.0",
+    "wdio-chromedriver-service": "^6.0.3",
+    "webdriverio": "^6.1.12"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "e2e": {
+		"devices": {
+			"ios-emulator": {
+				"platformName": "IOS",
+				"deviceName": "iPhone Simulator",
+				"app": "/Users/gilbertngeywo/projects/siddy/testappium/ios/build/Build/Products/Release-iphonesimulator/e2etest.app"
+			},
+			"android-emulator": {
+				"platformName": "Android",
+				"deviceName": "Android Emulator",
+				"app": "/Users/gilbertngeywo/projects/siddy/testappium/android/app/build/outputs/apk/debug/app-debug.apk"
+			}
+		}
+	}
+}
