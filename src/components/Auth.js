@@ -17,10 +17,7 @@ const Auth = () => {
   const [message, setMessage] = useState(null);
 
   return (
-    <SafeAreaView
-      //   accessibilityLabel="auth__container"
-      style={[styles.container]}
-      {...setTestId('auth__container')}>
+    <SafeAreaView style={[styles.container]} {...setTestId('auth__container')}>
       <Formik
         initialValues={{email: '', password: ''}}
         validationSchema={Yup.object({
@@ -35,9 +32,7 @@ const Auth = () => {
         }}>
         {(props) => (
           <>
-            <View
-              // accessibilityLabel="lbl_title"
-              {...setTestId('lbl_title')}>
+            <View {...setTestId('lbl_title')}>
               <Text>Login</Text>
             </View>
             <TextInput
@@ -63,16 +58,15 @@ const Auth = () => {
               placeholder="Password"
               value={props.values.password}
               secureTextEntry
-              accessibilityLabel="login_input_password"
               {...setTestId('login_input_password')}
             />
 
             <View accessibilityLabel="lbl_message">
-              <Text accessibilityLabel="txt_message">{message}</Text>
+              <Text {...setTestId('btn_login')}>{message}</Text>
             </View>
 
             <TouchableWithoutFeedback
-              accessibilityLabel="btn_login"
+              {...setTestId('btn_login')}
               onPress={() => {
                 const error = props.errors.email
                   ? props.errors.email
